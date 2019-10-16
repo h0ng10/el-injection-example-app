@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+ 
+<html xmlns="http://www.w3.org/1999/xhtml"
+    xmlns:f="http://java.sun.com/jsf/core"
+    xmlns:h="http://java.sun.com/jsf/html"
+    xmlns:ui="http://java.sun.com/jsf/facelets"
+    xmlns:c="http://java.sun.com/jsp/jstl/core">
+ 
+	<f:loadBundle basename="messages" var="msg"/>
+	
+	<h:head>
+	    <title>Expression Language Vulnerability</title>
+	    <h:outputStylesheet name="bootstrap-4.3.1-dist/css/bootstrap.min.css"/>
+	    <h:outputStylesheet name="css/style.css"/>
+	    <h:outputStylesheet name="css/table-style.css"  />
+	</h:head>
+	
+	<h:body>
+		<div class="jumbotron" style="background: White">
+		
+			<h:graphicImage value="resources/images/mogwai_labs_logo.png" class="w-25 p-3"/>
+			
+			<pre>
+	    
+		    </pre>
+		    
+				<h2>
+					<h:outputText value="This is a simple example of expression language injection. Please enter your expression."/>
+				</h2>
+			
+		    <pre>
+		   		 <h:form>
+				      <h:inputText id="input" value="#{inputBean.input}" class="form-control my-1"/>
+				      <h:commandButton value="Submit" class="btn btn-light my-2 my-sm-2" action="exploit_results_page" style="font-family: Open Sans, Helvetica, sans-serif; font-size: 150%"/>
+			    </h:form>
+		    </pre>
+	    	
+		    <div>
+		    	<h2>
+					<h:outputText value="Session scope"/>
+				</h2>
+				<h:dataTable value="#{sessionScope.entrySet().toArray()}" var="entry" styleClass="table table-light table-striped table-bordered rounded-lg">
+	    			<h:column>
+	    				<f:facet name="header">Key</f:facet>
+	    				#{entry.key}
+	    			</h:column>
+	    			
+	    			<h:column>
+	    				<f:facet name="header">Value</f:facet>
+	    				#{entry.value}
+	    			</h:column>
+    			</h:dataTable>
+		    </div>
+	    </div>
+	    
+	</h:body>
+</html>

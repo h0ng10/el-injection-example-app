@@ -1,0 +1,29 @@
+h1 {
+  font-size: 2.5em;
+}
+
+h2 {
+  font-size: 1.875em;
+}
+
+.mogwailabslogo{
+	font-family: "Open Sans", Helvetica, sans-serif;
+	font-size: 7vm;
+	font-weight: bold;
+	background: p-3 mb-2 bg-secondary text-white;
+	color: #357798;
+	
+}
+
+.labs{
+	font-family: "Open Sans", Helvetica, sans-serif;
+	font-size: 7vm;
+	font-weight: bold;
+	background: p-3 mb-2 bg-secondary text-white;
+	color: White;
+}
+
+body{
+	font-family: "Open Sans", Helvetica, sans-serif;
+	font-size: 3vm;
+}
